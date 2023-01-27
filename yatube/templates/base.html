@@ -1,0 +1,14 @@
+<html lang="ru"> 
+  <head>
+    {% include 'includes/header.html' %}
+  </head>
+  <body>	   
+    <header>
+        {% include 'includes/navigation.html' %}
+    </header>
+    <main>
+        {% block content %}Контент{% endblock content %}
+    </main>
+      {% include 'includes/footer.html' %}
+  </body>
+</html>
