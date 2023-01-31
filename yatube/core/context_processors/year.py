@@ -1,6 +1,8 @@
-import datetime
+import datetime as dt
 
 
 def year(request):
-    year = datetime.datetime.now().year
-    return {'year': year}
+
+    return {
+        'year': dt.datetime.now().year,
+    }

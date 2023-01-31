@@ -1,15 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %} {% if is_edit %} Редактировать запись {% else %} Добавить запись {% endif %} {% endblock %}
-{% block header %} {% if is_edit %} Редактировать запись {% else %} Добавить запись {% endif %} {% endblock %}
+{% block title %} {% if edit %} Редактировать запись {% else %} Добавить запись {% endif %} {% endblock %}
 {% block content %}
 {% load user_filters %}
   <div class="row justify-content-center">
     <div class="col-md-8 p-5">
       <div class="card">
-        <div class="card-header">
-          Создать статью
-        </div>
         <div class="card-body">
           {% if form.errors %}
               {% for field in form %}
@@ -25,12 +21,10 @@
                 </div>
               {% endfor %}
           {% endif %}
-
           <form method="post"
-            {% if action_url %}
-              action="{% url action_url %}"
-            {% endif %}
-          >
+            {% if action_url %} 
+            {% endif %} 
+          > 
           {% csrf_token %}
 
           {% for field in form %}

@@ -1,7 +1,7 @@
 from django import forms
-from .models import Post
+from django.conf import settings
 
-ROWS: int = 7
+from .models import Post
 
 
 class PostForm(forms.ModelForm):
@@ -10,6 +10,6 @@ class PostForm(forms.ModelForm):
         fields = ('text', 'group')
         widgets = {
             'text': forms.Textarea(attrs={'class': 'form-control',
-                                                   'rows': ROWS}),
+                                                   'rows': settings.ROWS}),
             'group': forms.Select(attrs={'class': 'form-control'})
         }
