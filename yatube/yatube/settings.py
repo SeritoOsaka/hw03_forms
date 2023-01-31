@@ -140,4 +140,4 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 VIEW_COUNT = 10
 
-ROWS = 7 
+ROWS = 7

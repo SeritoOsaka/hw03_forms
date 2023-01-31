@@ -41,7 +41,7 @@ def profile(request, username):
 
 
 def post_detail(request, post_id):
-    post = get_object_or_404(Post.objects.select_related(), pk = post_id)
+    post = get_object_or_404(Post.objects.select_related(), pk=post_id)
     context = {
         'post': post,
     }
@@ -73,7 +73,7 @@ def post_create(request):
 
 
 def post_edit(request, post_id):
-    edit = get_object_or_404(Post.objects.select_related(), pk = post_id)
+    edit = get_object_or_404(Post.objects.select_related(), pk=post_id)
     form = PostForm(request.POST, instance=edit)
 
     if edit.author != request.user:

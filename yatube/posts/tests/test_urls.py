@@ -5,7 +5,6 @@ class StaticURLTests(TestCase):
     def setUp(self):
         self.guest_client = Client()
 
-    
     def test_homepage(self):
         guest_client = Client()
         response = guest_client.get('/')
