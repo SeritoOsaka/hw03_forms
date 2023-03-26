@@ -21,10 +21,8 @@
                 </div>
               {% endfor %}
           {% endif %}
-          <form method="post"
-            {% if action_url %} 
-            {% endif %} 
-          > 
+          <form method="post">
+            
           {% csrf_token %}
 
           {% for field in form %}

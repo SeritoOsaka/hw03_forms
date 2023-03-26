@@ -5,7 +5,6 @@
 {% endblock title %}
 
 {% block content %}
-<div class="container py-5">
         <div class="row">
           <aside class="col-12 col-md-3">
             <ul class="list-group list-group-flush">
@@ -14,7 +13,7 @@
               </li>               
               <li class="list-group-item">
                 Группа: {{  posts.group.title  }}
-                <a href="{% url 'posts:group_list' post.group.slug %}">
+                <a href="{% url 'posts:group_list' post.group.slug %}" class="text-secondary">
                   все записи группы
                 </a>
               </li>            
@@ -33,7 +32,7 @@
           </aside>
           <article class="col-12 col-md-9">
             <p>{{  post.text|linebreaksbr  }}</p>
-            {% if user.is_authenticated and post.author == user %}
+            {% if post.author == user %}
             <a class="btn btn-primary" href="{% url 'posts:post_edit' post.pk %}">
               редактировать запись
             </a>

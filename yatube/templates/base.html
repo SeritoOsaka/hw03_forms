@@ -7,8 +7,10 @@
         {% include 'includes/navigation.html' %}
     </header>
     <main>
-        {% block content %}Контент{% endblock content %}
+        {% block content %}<div class="container py-5">Контент</div>{% endblock content %}
     </main>
+    <footer>
       {% include 'includes/footer.html' %}
+    </footer>
   </body>
 </html>

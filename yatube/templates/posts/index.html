@@ -3,8 +3,6 @@
   Последние обновления на сайте
 {% endblock %}
 {% block content %}
-<div class="container py-5">
-<article>
 {% for post in page_obj %}
   <ul>
     <li>
@@ -20,6 +18,5 @@
 {% endif %} 
 {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
-</article>
 {% include 'includes/paginator.html' %}
 {% endblock %} 
