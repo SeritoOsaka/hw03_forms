@@ -40,15 +40,15 @@ def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     posts_count = post.author.posts.count()
     context = {
-        "post": post,
-        "posts_count": posts_count,
+        'post': post,
+        'posts_count': posts_count,
     }
     return render(request, 'posts/post_detail.html', context)
 
 
 def group_list(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    post_list = group.posts.select_related("author")
+    post_list = group.posts.select_related('author')
     page_obj = page_look(post_list, request.GET.get('page'))
     context = {
         'group': group,
@@ -83,4 +83,4 @@ def post_edit(request, post_id):
         'form': form,
         'is_edit': True,
     }
-    return render(request, "posts/post_create.html", context)
+    return render(request, 'posts/post_create.html', context)

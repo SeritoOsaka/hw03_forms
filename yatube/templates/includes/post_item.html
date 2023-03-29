@@ -1,16 +1,19 @@
 <article>
-    <ul>
-      <li>
-        Автор: {{  post.author  }}
-      </li>
-      <li>
-        Дата публикации: {{  post.pub_date |date:"D d M Y" }} 
-      </li>
-    </ul>
-    <p>
-      {{  post.text|linebreaksbr  }}
-    </p>
-    <a href="{% url 'posts:post_detail' post.pk %}">подробная информация</a>
-  </article>
-
+  <ul>
+    <li>
+      <p>Автор: <a href="{% url 'posts:profile' post.author %}">{{ post.author }}</a></p>
+    </li>
+    <li>
+      Дата публикации: {{  post.pub_date |date:"D d M Y" }}
+    </li>
+  </ul>
+  <p>
+    {{  post.text|linebreaksbr  }}
+  </p>
+  <a href="{% url 'posts:post_detail' post.pk %}">подробная информация</a>
+  <br>
+  {% if post.group %}
+  <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
+{% endif %}
+</article>
  
