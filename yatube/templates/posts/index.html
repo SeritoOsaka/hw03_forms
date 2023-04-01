@@ -6,7 +6,7 @@
 
 {% block content %}
   {% for post in page_obj %}
-    {% include 'includes/post_item.html' %}
+  {% include "includes/post_item.html" with post=post hide_author_link=False show_group_link=True %}
     {% if not forloop.last %}
       <hr>
     {% endif %}

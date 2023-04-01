@@ -1,8 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block title %}
+
   {{  post.title|truncatechars:30  }}
-{% endblock title %}
+  
+{% endblock title %} 
 
 {% block content %}
         <div class="row">
@@ -10,13 +12,13 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 Дата публикации: {{  post.pub_date |date:"D d M Y"  }}
-              </li>               
+              </li>
               <li class="list-group-item">
-                Группа: {{  posts.group.title  }}
+                Группа: {{  post.group  }}
                 <a href="{% url 'posts:group_list' post.group.slug %}" class="text-secondary">
                   все записи группы
                 </a>
-              </li>            
+              </li>
               <li class="list-group-item">
                 Автор: {{  post.author  }}
               </li>
@@ -36,8 +38,8 @@
             <a class="btn btn-primary" href="{% url 'posts:post_edit' post.pk %}">
               редактировать запись
             </a>
-            {% endif %}              
+            {% endif %}
           </article>
-        </div>     
-      </div>      
+        </div>
+      </div>
 {% endblock content %}
